@@ -8,9 +8,15 @@ class MyApp extends StatelessWidget {
 
     return new MaterialApp(
       title: 'Flutter Demo',
-      home: Text(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Hello Flutter!'),
+        ),
+
+        body: Text(
         'Hello, Flutter World!!!',
         style: TextStyle(fontSize: 32.0),
+        ),
       ),
     );
   }
