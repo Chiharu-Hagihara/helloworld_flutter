@@ -10,9 +10,9 @@ class MyApp extends StatelessWidget {
     return new MaterialApp(
       title: 'Generated App',
       theme: new ThemeData(
-        primarySwatch: Colors.lightGreen,
-        primaryColor: const Color(0xFF8bc34a),
-        accentColor: const Color(0xFF8bc34a),
+        primarySwatch: Colors.blue,
+        primaryColor: const Color(0xFF2196f3),
+        accentColor: const Color(0xFF2196f3),
         canvasColor: const Color(0xFFfafafa),
       ),
       home: new MyHomePage(),
@@ -34,15 +34,35 @@ class _MyHomePageState extends State<MyHomePage> {
         title: new Text('App Name'),
       ),
       body:
-      new Center(
-        child:
-        new Text(
-          "Hello Flutter!!!",
-          style: new TextStyle(fontSize:32.0,
-              color: const Color(0xFF000000),
-              fontWeight: FontWeight.w700,
-              fontFamily: "Roboto"),
-        ),
+      new Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisSize: MainAxisSize.max,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            new Text(
+              "One",
+              style: new TextStyle(fontSize: 50.0,
+                  color: const Color(0xFF000000),
+                  fontWeight: FontWeight.w700,
+                  fontFamily: "Roboto"),
+            ),
+
+            new Text(
+              "Two",
+              style: new TextStyle(fontSize: 30.0,
+                  color: const Color(0xFF000000),
+                  fontWeight: FontWeight.w500,
+                  fontFamily: "Roboto"),
+            ),
+
+            new Text(
+              "Three",
+              style: new TextStyle(fontSize: 30.0,
+                  color: const Color(0xFF000000),
+                  fontWeight: FontWeight.w300,
+                  fontFamily: "Roboto"),
+            )
+          ]
 
       ),
 
