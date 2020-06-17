@@ -1,62 +1,47 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(new MyApp());
-
+void main() {
+  runApp(new MyApp());
+}
 class MyApp extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Generated App',
       theme: new ThemeData(
-        primarySwatch: Colors.blue
+        primarySwatch: Colors.blue,
+        primaryColor: const Color(0xFF2196f3),
+        accentColor: const Color(0xFF2196f3),
+        canvasColor: const Color(0xFFfafafa),
       ),
-      home: new MyHomePage(title: 'Flutter Sample App'),
+      home: new MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-  final String title;
-
+  MyHomePage({Key key}) : super(key: key);
   @override
   _MyHomePageState createState() => new _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
+    return new Scaffold(
+      appBar: new AppBar(
+        title: new Text('App Name'),
+      ),
+      body:
+      new Text(
+        "Hello Flutter!",
+        style: new TextStyle(fontSize:32.0,
+            color: const Color(0xFF000000),
+            fontWeight: FontWeight.w700,
+            fontFamily: "Roboto"),
       ),
 
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-
-          children: <Widget>[
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
-            )
-          ],
-        ),
-      ),
-
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'set message.',
-        child: Icon(Icons.star),
-      ),
     );
   }
 }
