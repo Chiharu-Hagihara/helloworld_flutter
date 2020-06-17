@@ -34,32 +34,32 @@ class _MyHomePageState extends State<MyHomePage> {
         title: new Text('App Name'),
       ),
       body:
-      new Column(
+      new Row(
           mainAxisAlignment: MainAxisAlignment.start,
           mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             new Text(
-              "One",
-              style: new TextStyle(fontSize: 50.0,
+              "qWerty1",
+              style: new TextStyle(fontSize:30.0,
+                  color: const Color(0xFF000000),
+                  fontWeight: FontWeight.w900,
+                  fontFamily: "Roboto"),
+            ),
+
+            new Text(
+              "qWerty1",
+              style: new TextStyle(fontSize:30.0,
                   color: const Color(0xFF000000),
                   fontWeight: FontWeight.w700,
                   fontFamily: "Roboto"),
             ),
 
             new Text(
-              "Two",
-              style: new TextStyle(fontSize: 30.0,
+              "qWerty1",
+              style: new TextStyle(fontSize:21.0,
                   color: const Color(0xFF000000),
-                  fontWeight: FontWeight.w500,
-                  fontFamily: "Roboto"),
-            ),
-
-            new Text(
-              "Three",
-              style: new TextStyle(fontSize: 30.0,
-                  color: const Color(0xFF000000),
-                  fontWeight: FontWeight.w300,
+                  fontWeight: FontWeight.w400,
                   fontFamily: "Roboto"),
             )
           ]
