@@ -27,45 +27,69 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text('App Name'),
+  var _message;
+  final controller = TextEditingController();
+
+  @override void initState() {
+    _message = 'ok.';
+    super.initState();
+  }
+
+  @override Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('App Name'),
       ),
       body:
-      new Row(
+      Center(
+        child:
+        Column(
           mainAxisAlignment: MainAxisAlignment.start,
           mainAxisSize: MainAxisSize.max,
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            new Text(
-              "qWerty1",
-              style: new TextStyle(fontSize:30.0,
-                  color: const Color(0xFF000000),
-                  fontWeight: FontWeight.w900,
-                  fontFamily: "Roboto"),
+            Padding(
+              padding: EdgeInsets.all(20.0),
+              child: Text(
+                _message,
+                style: TextStyle(fontSize: 32.0,
+                    fontWeight: FontWeight.w400,
+                    fontFamily: "Roboto"),
+              ),
             ),
 
-            new Text(
-              "qWerty1",
-              style: new TextStyle(fontSize:30.0,
-                  color: const Color(0xFF000000),
-                  fontWeight: FontWeight.w700,
-                  fontFamily: "Roboto"),
+            Padding(
+              padding: EdgeInsets.all(10.0),
+              child: TextField(
+                controller: controller,
+                style: TextStyle(fontSize: 28.0,
+                    color: const Color(0xFFFF0000),
+                    fontWeight: FontWeight.w400,
+                    fontFamily: "Roboto"),
+              ),
             ),
-
-            new Text(
-              "qWerty1",
-              style: new TextStyle(fontSize:21.0,
-                  color: const Color(0xFF000000),
-                  fontWeight: FontWeight.w400,
-                  fontFamily: "Roboto"),
-            )
-          ]
-
+            FlatButton(
+                padding: EdgeInsets.all(10.0),
+                color: Colors.lightBlueAccent,
+                child: Text(
+                  "Push me!",
+                  style: TextStyle(fontSize: 32.0,
+                      color: const Color(0xDD000000),
+                      fontWeight: FontWeight.w400,
+                      fontFamily: "Roboto"),
+                ),
+                onPressed: buttonPressed
+            ),
+          ],
+        ),
       ),
-
     );
+  }
+
+
+  void buttonPressed() {
+    setState(() {
+      _message = 'you said: ' + controller.text;
+    });
   }
 }
